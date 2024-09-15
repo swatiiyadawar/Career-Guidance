@@ -1,54 +1,78 @@
+// src/Homepage.jsx
 import React from 'react';
+import { Link } from 'react-router-dom'; // Importing Link from React Router
 
-
-export default function HomePage() {
-    return (
-      <div className="flex flex-col min-h-screen">
-        <header className="px-4 lg:px-6 h-14 flex items-center">
-          <div className="flex items-center justify-center">
-            {/* Icon Placeholder */}
-            <div className="h-6 w-6 bg-gray-500 rounded-full"></div>
-            <span className="sr-only">Career Compass</span>
-          </div>
-          <nav className="ml-auto flex gap-4 sm:gap-6">
-            <a href="#" className="text-sm font-medium hover:underline underline-offset-4">
-              Tests
-            </a>
-            <a href="#" className="text-sm font-medium hover:underline underline-offset-4">
-              Dashboard
-            </a>
-            <a href="#" className="text-sm font-medium hover:underline underline-offset-4">
-              Pathways
-            </a>
-            <a href="#" className="text-sm font-medium hover:underline underline-offset-4">
-              Career Guidance
-            </a>
-            <a href="#" className="text-sm font-medium hover:underline underline-offset-4">
-              Mentorship Program
-            </a>
+const Homepage = () => {
+  return (
+    <div className="flex flex-col min-h-screen">
+      <header className="fixed top-0 left-0 w-full bg-gray-800 text-white shadow-md z-10">
+        <div className="container mx-auto flex items-center justify-between h-14 px-4 lg:px-6">
+          <div className="text-xl font-bold">Career Compass</div>
+          <nav className="flex gap-4">
+            <Link className="hover:underline" to="/">Home</Link>
+            <Link className="hover:underline" to="/sign-in">Sign In</Link>
+            <Link className="hover:underline" to="/pathways">Pathways</Link>
           </nav>
-        </header>
-  
-        <main className="flex-1">
-          <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
-            <div className="container px-4 md:px-6">
-              <div className="flex flex-col items-center space-y-4 text-center">
-                <div className="space-y-2">
-                  <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
-                    Welcome to Career Compass
-                  </h1>
-                  <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-                    Your guide to making informed career choices. Take tests, explore pathways, and get mentorship.
-                  </p>
-                </div>
-                <button className="inline-flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300">
-                  Start Your Journey
-                </button>
-              </div>
+        </div>
+      </header>
+      <main className="flex-1 pt-16 p-4 bg-gray-100">
+        <section className="text-center mb-12">
+          <h1 className="text-4xl font-extrabold text-gray-900 mb-4">
+            Welcome to Career Compass
+          </h1>
+          <p className="text-lg text-gray-700 mb-6">
+            Your guide to making informed career choices. Explore various career pathways, take assessments, and connect with mentors to shape your future.
+          </p>
+          <img
+            src="https://www.besonline.in/blog/wp-content/uploads/2020/04/Career-Counselling-Career-Guidance.jpg"
+            alt="Career Guidance"
+            className="w-full h-auto object-cover mb-6 rounded-lg shadow-lg"
+          />
+
+        </section>
+        <section className="container mx-auto p-4">
+          <h2 className="text-3xl font-semibold text-gray-800 mb-6 text-center">
+            Why Choose Us?
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+              <img
+                src="https://www.mindbrainandpsychiatry.com/wp-content/uploads/2019/06/Career-Guidance.png"
+                alt="Personalized Career Tests"
+                className="mb-4 rounded-full"
+              />
+              <h3 className="text-xl font-semibold text-gray-800 mb-4">Personalized Career Tests</h3>
+              <p className="text-gray-600">
+                Discover your strengths and interests with our personalized career assessments.
+              </p>
             </div>
-          </section>
-        </main>
-      </div>
-    );
-  }
-  
+            <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+              <img
+                src="https://www.beyondpsychub.com/wp-content/uploads/2022/11/Mentorship.jpg"
+                alt="Expert Mentorship"
+                className="mb-4 rounded-full"
+              />
+              <h3 className="text-xl font-semibold text-gray-800 mb-4">Expert Mentorship</h3>
+              <p className="text-gray-600">
+                Get guidance from industry experts to make informed career decisions and advance your career.
+              </p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+              <img
+                src="https://i.pinimg.com/originals/d1/02/c3/d102c3dfe7399f6b0c251d030959395a.jpg"
+                alt="Career Resources"
+                className="mb-4 rounded-full"
+              />
+              <h3 className="text-xl font-semibold text-gray-800 mb-4">Career Resources</h3>
+              <p className="text-gray-600">
+                Access a wealth of resources, including articles, videos, and tools to support your career journey.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  );
+};
+
+export default Homepage;
