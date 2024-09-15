@@ -16,7 +16,7 @@ export default function Topbar() {
             alt="User Profile"
             className="w-10 h-10 rounded-full"
           />
-          <span>John Doe</span>
+          <span>Pravin</span>
         </button>
         {isOpen && (
           <div className="absolute right-0 mt-2 w-48 bg-white text-black shadow-lg rounded-md py-2">
